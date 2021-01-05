@@ -1,0 +1,42 @@
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<div id="app">
+<h2>vehicle</h2>
+<input type="radio" id="one" name="vehicle" value="car">
+<label for="one">car</label>
+<input type="radio" id="two" name="vehicle" value="bicycle">
+<label for="two">bicycle</label>
+
+<h2>type</h2>
+<div class="vehicle1" style="display:none;" >
+  <input type="radio" id="car1" value="4wd" name="result">
+  <label for="car1">4wd</label>
+  <input type="radio" id="car2" value="2wd" name="result">
+  <label for="car2">2wd</label>
+</div>
+<div class="vehicle2" style="display:none;" >
+  <input type="radio" id="bicycle1" value="electronic" name="result">
+  <label for="bicycle1">electronic</label>
+  <input type="radio" id="bicycle2" value="sports" name="result">
+  <label for="bicycle2">sports</label>
+</div>
+<h2>result</h2>
+<div id="result"></div>
+</div>
+<script>
+$('[name=vehicle]').click(function(){
+  console.log($(this).val());
+  if($(this).val() == 'car'){
+    $(".vehicle1").css("display","");
+    $(".vehicle2").css("display","none");
+  }else{
+    $(".vehicle2").css("display","");
+    $(".vehicle1").css("display","none");
+  }
+});
+
+$('[name=result]').click(function(){
+  console.log($(this).val());
+  $('#result').text($(this).val());
+});
+</script>

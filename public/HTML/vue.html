@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+<h2>vehicle</h2>
+<input type="radio" id="one" value="1" v-model="vehicle">
+<label for="one">car</label>
+<input type="radio" id="two" value="2" v-model="vehicle">
+<label for="two">bicycle</label>
+<h2>type</h2>
+<template v-if="vehicle == 1">
+  <input type="radio" id="car1" value="4wd" v-model="result">
+  <label for="car1">4wd</label>
+  <input type="radio" id="car2" value="2wd" v-model="result">
+  <label for="car2">2wd</label>
+</template>
+<template v-if="vehicle == 2">
+  <input type="radio" id="bicycle1" value="electronic" v-model="result">
+  <label for="bicycle1">electronic</label>
+  <input type="radio" id="bicycle2" value="sports" v-model="result">
+  <label for="bicycle2">sports</label>
+</template>
+<h2>result</h2>
+<div>
+  {{ result }}
+</div>
+</div>
+<script>
+var app1 = new Vue({
+  el: '#app',
+  data: { 
+      message: '',
+      vehicle: 0,
+      color: 0,
+      result: ''
+    }
+})
+</script>

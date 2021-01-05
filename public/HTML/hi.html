@@ -1,0 +1,103 @@
+<link href="main.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+.bg{
+    background-color: red;
+}
+</style>
+
+<div id="app">
+<a id="a1">プログラミング講座</a>
+<div>プログラミング講座</div>
+
+<div id="out1"></div><br><br>
+<table>
+    <tr>
+        <td id="0_0">a</td>
+        <td id="0_1">d</td>
+    </tr>
+    <tr>
+        <td id="1_0">b</td>
+        <td id="1_1">e</td>
+    </tr>
+    <tr>
+        <td id="2_0">c</td>
+        <td id="2_1">f</td>
+    </tr>
+</table>
+
+<input v-model="message" placeholder="edit me">
+<br>
+<a href="">{{ message }}</a>
+
+<table>
+<tr v-for="d in list">
+  <td>{{ d[0] }}</td> <td v-bind:class="{ bg: d[0] == 'b' }">{{d[1]}}</td>
+</tr>
+</table>
+
+
+</div>
+<script>
+
+var app1 = new Vue({
+  el: '#app',                        /* #app-1 要素に対して Vue を適用する */
+  data: { 
+      message: '',
+      list: [['a','d'],['b','e'],['c','f']]
+    }
+})
+
+
+// var data = [];
+// var tr = $("table tr");//テーブルの全行を取得
+// for( var i=0,l=tr.length;i<l;i++ ){
+//  var cells = tr.eq(i).children();//1行目から順番に列を取得(th、td)
+//  for( var j=0,m=cells.length;j<m;j++ ){
+//  if( typeof data[i] == "undefined" )
+//  data[i] = [];
+//  data[i][j] = cells.eq(j).text();//i行目j列の文字列を取得
+//  }
+// }
+// console.log(data);
+// for(var i=0;i < data.length; i++ ){
+    
+//     if(data[i][0] == 'b'){
+//         $('#'+i+'_1').css('background-color','red');
+//         // console.log(data[i][0]);
+//     }
+// }
+
+// $('table tr').each(function(index , elm){
+//     // console.log(elm);
+    
+//     // console.log($(elm).find('td').text());
+//     // if ($(elm).find('input:checkbox').size()>0){
+//     //     if (!$(elm).find('input:checkbox').is(':checked')){
+//     //         //alert('入力していない項目があります');
+//     //         check += '入力していない項目があります';
+//     //     }
+//     // }
+// });
+
+
+    // console.log($("#a1").text());
+    // $("#out1").html('<a href="">'+$("#a1").text()+'</a>');
+    // var arr = [["a","d"],["b","e"],["c","f"]];
+    // for (var i = 0; i < arr.length; i++) {
+        
+        
+    //     if (arr[i][0] == "b") {
+    //         console.log(arr[i][1]);
+    //     }
+    // }
+    // console.log(arr[1][1]);
+
+
+    function hi (){
+        alert('hi');
+    }
+
+</script>
